@@ -10,7 +10,7 @@ package inventory;
     public static void textWrite(){
 
         // The name of the file to open.
-        String fileName = "temp.txt";
+        String fileName = "inventory.txt";
 
         try {
             // Assume default encoding.
@@ -23,7 +23,7 @@ package inventory;
 
             // Note that write() does not automatically
             // append a newline character.
-            bufferedWriter.write(reader.readerwrite());
+
             bufferedWriter.write(" here is some text.");
             bufferedWriter.newLine();
             bufferedWriter.write("We are writing");
