@@ -1,0 +1,28 @@
+<body>
+      <div class="container">
+        <div id="app">
+            <div class="jumbotron" v-if="film">
+                <div class="row">
+                    <div class="col-xs-3">
+                         <img :src="film.poster_path | img" :alt="film.title" class="img-responsive">
+                    </div>
+                    <div class="col-xs-9">
+                        <h1>{{ film.title }}</h1>
+                        <p>{{ film.overview }}</p>
+	        <p>Released {{ film.release_date }}</p> release date
+	       <p>{{ film.vote_average}}/10 out of {{film.vote_count}} votes</p> popularity
+                    </div>
+                </div>
+            </div>
+            <div class="row" v-if="credits" v-for="row in castRows">
+                <div class="col-xs-3" v-for="cast in row" v-if="cast.profile_path">
+                    <img :src="cast.profile_path | img" :alt="cast.name" class="img-responsive img-thumbnail">
+                    <p class="lead">{{ cast.name }}</p>
+                    <p>{{ cast.character }}</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    <!-- Lodash  -->   must add
+    <script src="https://unpkg.com/lodash@4.17.4/lodash.js"></script>
+

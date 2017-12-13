@@ -1,17 +1,17 @@
 
 package inventory;
-
+import java.util.Scanner;
 
 public class Inventory {
-
+    static Scanner input = new Scanner(System.in); 
 
     public static void main(String[] args) {
-       
-        reader.textReader();
-        System.out.println("**********************");
-        writer.textWrite();
+       String add;
+        System.out.println("Night-Blades inventory system");
         
-        reader.textReader();
+        MainMenu.Menu();
+
+        
         
         
         

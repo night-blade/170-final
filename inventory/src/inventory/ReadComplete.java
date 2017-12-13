@@ -1,23 +1,23 @@
 
 package inventory;
 import java.io.*;
+import java.util.Scanner;
 
-public class reader {
-    
+public class ReadComplete {
+    static Scanner input = new Scanner(System.in); 
 
 
     public static void textReader() {
-
+        
         // The name of the file to open.
         String fileName = "inventory.txt";
 
-        // This will reference one line at a time
+        
         String line = null;
 
         try {
             // FileReader reads text files in the default encoding.
-            FileReader fileReader = 
-                new FileReader(fileName);
+            FileReader fileReader = new FileReader(fileName);
 
             // Always wrap FileReader in BufferedReader.
             BufferedReader bufferedReader = 
@@ -42,10 +42,21 @@ public class reader {
             // Or we could just do this: 
             // ex.printStackTrace();
         }
+        
+        System.out.println("Return to Main Menu?");            
+                    String toMain = input.next();
+                
+                
+        if (toMain.charAt(0) == 'y'){
+            MainMenu.Menu();
+        }else{
+            System.exit(0);
+        }
     }
+}
     
  
     
-}
+
 
 
